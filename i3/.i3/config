@@ -1,0 +1,324 @@
+# i3 config file (v)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# Colors and all
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+
+# Use custom colors for black
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #00000000
+
+# Custom colors for rofi
+set $bg-color              #2f343f
+set $text-color            #4a9fd6
+
+# Custom Colors for the bar
+set $bg_color           #000000
+set $focused_workspace  #4c7899 #011640 #ffffff
+set $active_workspace   #333333 #011640 #ffffff
+set $inactive_workspace #333333 #2D5873 #888888
+set $urgent_workspace   #2f343a #900000 #ffffff
+set $binding_mode       #2f343a #900000 #ffffff
+
+
+set $height 24
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+font pango: System San Fransisco 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# start rofi (a program launcher)
+#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -opacity "85"
+bindsym $mod+d exec rofi -show run -lines 4 -eh 3 -width 100 -padding 300 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 15"
+#bindsym $mod+d exec rofi -show run -color-window "argb:96d9c275, argb:0002b36, argb:7f000000" -color-normal "#8b5f23, #270102, #f3d9ac, #f0e5c9, #220001" -color-active "#fdf6e3, #268bd2, #eee8d5, #f0e5c9, #220001" -color-urgent "#fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3" -font "System San Francisco Display 15"
+
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus right
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+set $workspace1 "1: Terminals "
+set $workspace2 "2: Atom "
+set $workspace3 "3: Firefox "
+set $workspace9 "9: Chrome "
+set $workspace10 "10: Nautilus "
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+#assign these select workspaces to certain tasks. Use xprop to find class value.
+assign [class = "Atom"] $workspace2
+assign [class = "Firefox"] $workspace3
+assign [class = "Google-chrome"] $workspace9
+assign [class = "Nautilus"] $workspace10
+
+#gaps
+for_window [class="^.*"] border pixel 0
+set $default_gaps_inner 8
+set $default_gaps_outer 5
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+smart_gaps on
+# smart_borders on
+hide_edge_borders both
+
+set $mode_gaps gaps
+set $mode_gaps_outer outer gaps
+set $mode_gaps_inner inner gaps
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+
+    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     mode "default", gaps inner current set 0
+    bindsym d     mode "default", gaps inner current set $default_gaps_inner
+
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     mode "default", gaps inner all set 0
+    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     mode "default", gaps outer current set 0
+    bindsym d     mode "default", gaps outer current set $default_gaps_outer
+
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     mode "default", gaps outer all set 0
+    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+mode  "(l)ock (e)xit (s)uspend (h)ibernate (r)estart (p)oweroff" {
+
+  bindsym l mode "default", exec --no-startup-id ~/scripts/i3exit lock
+  bindsym e mode "default", exec --no-startup-id ~/scripts/i3exit logout
+  bindsym s mode "default", exec --no-startup-id ~/scripts/i3exit suspend
+  bindsym h mode "default", exec --no-startup-id ~/scripts/i3exit hibernate
+  bindsym r mode "default", exec --no-startup-id ~/scripts/i3exit reboot
+  bindsym p mode "default", exec --no-startup-id ~/scripts/i3exit poweroff
+
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym $mod+l mode "(l)ock (e)xit (s)uspend (h)ibernate (r)estart (p)oweroff"
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+#    height 25
+    font pango:DejaVu Sans Mono, Icons 8
+    status_command i3blocks -c ~/.i3/i3blocks.conf
+#    position top
+    mode hide
+    strip_workspace_numbers yes
+    tray_output primary
+    separator_symbol "■"
+    tray_padding 0
+
+   colors {
+      background $bg_color
+
+        focused_workspace  $focused_workspace
+        active_workspace   $active_workspace
+        inactive_workspace $inactive_workspace
+        urgent_workspace   $urgent_workspace
+        binding_mode       $binding_mode
+      }
+ #   colors {
+ #       statusline         $white
+ #       background         $transparent
+ #       separator          $transparent
+#
+ #       #                   BORDER       BACKGROUND   TEXT
+ #       focused_workspace  $transparent $transparent $darkwhite
+ #       inactive_workspace $transparent $transparent $white
+ #       active_workspace   $transparent $transparent $white
+ #       urgent_workspace   $darkred     $darkred     $transparent
+ #       binding_mode       $darkred     $darkred     $transparent
+ #       }
+}
+bindsym $mod+b bar hidden_state toggle
+
+
+####################### Customs #############################################
+# Custom Key-Bindings
+# Pulse Audio controls
+
+# decrease sound
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# increase sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# mute sound
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# screenshot
+bindsym --release Print exec gnome-screenshot
+
+
+# Sreen brightness controls
+ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+# Autostart
+#exec firefox
+exec ~/scripts/activity_monitor.sh
+exec i3-sensible-terminal
+exec --no-startup-id compton -f
+exec --no-startup-id nm-applet
+exec --no-srartup-id fluxgui
+exec --no-startup-id feh --bg-scale /home/harsh/Pictures/mate_wall.jpg
+exec --no-startup-id dropbox start
