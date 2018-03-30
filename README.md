@@ -1,7 +1,14 @@
 # dot-files
-# My custom dotfiles, contains .vimrc and .bashrc
-# Please install harlequin font vim, you can get it from their github page.
+The configuration files for the following are added:
+* i3
+* vim
+* zsh
+* tmux
 
-
-# Further to make your ubuntu look even cooler do :-
-#         Install font awesome, numix circle icon pack, and flatabulos theme.
+With the current settings, :  
+`tmux` would look like:
+![tmux-view](tmux_example.png?raw=true "Tmux View")  
+`vim` with some `cpp` or `python` file open would look like:
+![vim-view](vim_example.png?raw=true "Vim Code")  
+`zsh-terminal` with `powerlevel-9000` theme:  
+![zsh-view](zsh.png?raw=true "ZSH Powerlevel 9000")  
