@@ -1,0 +1,73 @@
+1522759908.347623 client started (26121): version 2.6, socket /tmp/tmux-1000/default, protocol 8
+1522759908.348033 on Linux 4.15.14-1-ARCH #1 SMP PREEMPT Wed Mar 28 17:34:29 UTC 2018; libevent 2.1.8-stable (poll)
+1522759908.348060 socket is /tmp/tmux-1000/default
+1522759908.348072 trying connect
+1522759908.348085 connect failed: Connection refused
+1522759908.348096 lock file is /tmp/tmux-1000/default.lock
+1522759908.348110 flock succeeded
+1522759908.348113 got lock (6)
+1522759908.348118 trying connect
+1522759908.348124 connect failed: Connection refused
+1522759908.348299 add peer 0x55a787652190: 7 ((nil))
+1522759908.348380 sending message 100 to peer 0x55a787652190 (4 bytes)
+1522759908.348388 sending message 101 to peer 0x55a787652190 (15 bytes)
+1522759908.348392 sending message 102 to peer 0x55a787652190 (11 bytes)
+1522759908.348395 sending message 108 to peer 0x55a787652190 (23 bytes)
+1522759908.348399 sending message 104 to peer 0x55a787652190 (0 bytes)
+1522759908.348403 sending message 107 to peer 0x55a787652190 (4 bytes)
+1522759908.348409 sending message 105 to peer 0x55a787652190 (30 bytes)
+1522759908.348413 sending message 105 to peer 0x55a787652190 (23 bytes)
+1522759908.348416 sending message 105 to peer 0x55a787652190 (17 bytes)
+1522759908.348420 sending message 105 to peer 0x55a787652190 (21 bytes)
+1522759908.348423 sending message 105 to peer 0x55a787652190 (11 bytes)
+1522759908.348428 sending message 105 to peer 0x55a787652190 (21 bytes)
+1522759908.348431 sending message 105 to peer 0x55a787652190 (20 bytes)
+1522759908.348435 sending message 105 to peer 0x55a787652190 (39 bytes)
+1522759908.348438 sending message 105 to peer 0x55a787652190 (70 bytes)
+1522759908.348442 sending message 105 to peer 0x55a787652190 (16 bytes)
+1522759908.348445 sending message 105 to peer 0x55a787652190 (41 bytes)
+1522759908.348448 sending message 105 to peer 0x55a787652190 (11 bytes)
+1522759908.348452 sending message 105 to peer 0x55a787652190 (41 bytes)
+1522759908.348455 sending message 105 to peer 0x55a787652190 (29 bytes)
+1522759908.348458 sending message 105 to peer 0x55a787652190 (18 bytes)
+1522759908.348461 sending message 105 to peer 0x55a787652190 (12 bytes)
+1522759908.348465 sending message 105 to peer 0x55a787652190 (22 bytes)
+1522759908.348468 sending message 105 to peer 0x55a787652190 (23 bytes)
+1522759908.348471 sending message 105 to peer 0x55a787652190 (26 bytes)
+1522759908.348475 sending message 105 to peer 0x55a787652190 (86 bytes)
+1522759908.348480 sending message 105 to peer 0x55a787652190 (27 bytes)
+1522759908.348496 sending message 105 to peer 0x55a787652190 (18 bytes)
+1522759908.348501 sending message 105 to peer 0x55a787652190 (38 bytes)
+1522759908.348504 sending message 105 to peer 0x55a787652190 (25 bytes)
+1522759908.348507 sending message 105 to peer 0x55a787652190 (26 bytes)
+1522759908.348511 sending message 105 to peer 0x55a787652190 (28 bytes)
+1522759908.348514 sending message 105 to peer 0x55a787652190 (20 bytes)
+1522759908.348517 sending message 105 to peer 0x55a787652190 (16 bytes)
+1522759908.348521 sending message 105 to peer 0x55a787652190 (17 bytes)
+1522759908.348524 sending message 105 to peer 0x55a787652190 (18 bytes)
+1522759908.348527 sending message 105 to peer 0x55a787652190 (20 bytes)
+1522759908.348530 sending message 105 to peer 0x55a787652190 (26 bytes)
+1522759908.348534 sending message 105 to peer 0x55a787652190 (30 bytes)
+1522759908.348537 sending message 105 to peer 0x55a787652190 (15 bytes)
+1522759908.348540 sending message 105 to peer 0x55a787652190 (8 bytes)
+1522759908.348544 sending message 105 to peer 0x55a787652190 (17 bytes)
+1522759908.348549 sending message 105 to peer 0x55a787652190 (44 bytes)
+1522759908.348552 sending message 105 to peer 0x55a787652190 (15 bytes)
+1522759908.348556 sending message 105 to peer 0x55a787652190 (54 bytes)
+1522759908.348559 sending message 105 to peer 0x55a787652190 (31 bytes)
+1522759908.348562 sending message 105 to peer 0x55a787652190 (31 bytes)
+1522759908.348566 sending message 105 to peer 0x55a787652190 (33 bytes)
+1522759908.348569 sending message 105 to peer 0x55a787652190 (228 bytes)
+1522759908.348580 sending message 105 to peer 0x55a787652190 (76 bytes)
+1522759908.348584 sending message 105 to peer 0x55a787652190 (16 bytes)
+1522759908.348588 sending message 105 to peer 0x55a787652190 (20 bytes)
+1522759908.348591 sending message 105 to peer 0x55a787652190 (16 bytes)
+1522759908.348594 sending message 106 to peer 0x55a787652190 (0 bytes)
+1522759908.348598 sending message 200 to peer 0x55a787652190 (4 bytes)
+1522759908.348601 client loop enter
+1522759908.526625 peer 0x55a787652190 message 207
+1522759908.526645 sending message 208 to peer 0x55a787652190 (0 bytes)
+1522759914.668168 peer 0x55a787652190 message 203
+1522759914.668204 sending message 205 to peer 0x55a787652190 (0 bytes)
+1522759914.668907 peer 0x55a787652190 message 204
+1522759914.668936 client loop exit
