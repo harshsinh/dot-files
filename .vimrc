@@ -25,6 +25,7 @@ filetype off                  " required
  Plugin 'cstrahan/vim-capnp'
  Plugin 'github/copilot.vim'
  Plugin 'dense-analysis/ale'
+ Plugin 'leafgarland/typescript-vim'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,7 +65,7 @@ set softtabstop=2
 set shiftwidth=2
 
 " Filetype sesific
-au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
+au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab nosmartindent
 
 autocmd FileType cpp set colorcolumn=81
 
@@ -147,6 +148,7 @@ noremap <leader>rg :execute "Ripgrep ".expand("<cword>")<CR>
 
 " Custom Syntax thing.....
 augroup filetypedetect
+    au! BufRead,BufNewFile *.{ts,tsx,js} set filetype=typescript
     au! BufRead,BufNewFile *.ino set filetype=cpp
     au! BufRead,BufNewFile *.launch set filetype=xml
     au! BufRead,BufNewFile BUILD set filetype=python
